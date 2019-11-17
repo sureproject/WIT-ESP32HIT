@@ -15,11 +15,7 @@
 PCF8574 botton(0x20);
 unsigned long timeElapsed;
 
-
-
 SSD1306Wire display(0x3c, 21, 22);
-
-
 
 #define M1A 25
 #define M1B 26
