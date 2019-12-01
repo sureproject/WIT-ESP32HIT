@@ -17,10 +17,9 @@ Servo servo2;
 Servo servo3;
 Servo servo4;
 
-/*
 Servo servo5;
 Servo servo6;
-Servo servo7;*/
+Servo servo7;
 
 void servo(uint8_t servo, int16_t angle)
 {
@@ -32,9 +31,9 @@ void servo(uint8_t servo, int16_t angle)
       servo2.detach();
       servo3.detach();
 	  servo4.detach();
-	  /*servo5.detach();
+	  servo5.detach();
 	  servo6.detach();
-	  servo7.detach();*/
+	  servo7.detach();
     }
     else
     {
@@ -61,7 +60,7 @@ void servo(uint8_t servo, int16_t angle)
         servo4.attach(_servo4);
       }
       servo4.write(angle);
-	  /*
+	  
 	  if (!(servo5.attached()))
       {
         servo5.attach(_servo5);
@@ -79,7 +78,7 @@ void servo(uint8_t servo, int16_t angle)
         servo7.attach(_servo7);
       }
       servo7.write(angle);
-	  */
+	  
     }
   }
   if (servo == 1)
@@ -146,7 +145,7 @@ void servo(uint8_t servo, int16_t angle)
     }
   }
   
-  /*
+  
   if (servo == 5)
   {
     if (angle == -1)
@@ -194,7 +193,6 @@ void servo(uint8_t servo, int16_t angle)
       servo7.write(angle);
     }
   }
-  */
   
 }
 //Cr. Inex
