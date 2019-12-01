@@ -5,7 +5,7 @@ module.exports = {
             color : '230',
             icon : '/static/icons/icons8_picture_96px_1.png',
             blocks : [
-                /*{
+                {
                     xml : `<block type="variables_set">
                                 <field name="VAR">img1</field>
                                 <value name="VALUE">
@@ -46,7 +46,7 @@ module.exports = {
                             </shadow>
                         </value>
                     </block>`
-                },*/
+                },
                 'i2c128x64_display_clear',
                 'i2c128x64_display_display',
                 
@@ -314,7 +314,10 @@ module.exports = {
                 },
                 'i2c128x64_display_width',
                 'i2c128x64_display_height',
-                'basic_string'
+                'basic_string',
+				'led_green_on',
+				'led_green_off',
+				'led_select_display'
             ]
         },
         {
