@@ -60,8 +60,8 @@ module.exports = function(Blockly){
                   image = image.resize({width : 128});
                   size = image.getSize();
                 }
-                if(size.height > 32){
-                  image = image.resize({height : 32});
+                if(size.height > 64){
+                  image = image.resize({height : 64});
                   size = image.getSize();
                 }
                 var buff = image.getBitmap();
@@ -440,6 +440,49 @@ Blockly.Blocks['i2c128x64_display_height'] = {
     this.setOutput(true, "Number");
     this.setColour(basic_colour);
  this.setTooltip("get display screen height in pixel");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['led_green_on'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("LED Green On");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(basic_colour);
+ this.setTooltip("trun on green LED");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['led_green_off'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("LED Green Off");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(basic_colour);
+ this.setTooltip("trun off green LED");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['led_select_display'] = {
+  init: function() {
+    
+    this.appendDummyInput()
+        .appendField("LED Color ")
+        .appendField(new Blockly.FieldDropdown([["Green","green"], ["Yellow","yellow"], ["Red","red"], ["Blue","blue"], ["RGB","rgb"]]), "color");
+	this.appendDummyInput()
+		.appendField(" Status ")
+		.appendField(new Blockly.FieldDropdown([["On","on"], ["Off","off"]]), "status");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(basic_colour);
+ this.setTooltip("turn LED color on/off");
  this.setHelpUrl("");
   }
 };
