@@ -94,16 +94,17 @@ void WIT_ESP32HIT(){
   }
   
   display.clear();
-  display.setFont(ArialMT_Plain_16);
+  /*display.setFont(ArialMT_Plain_16);
   display.drawString(20,  0, String("Press!"));
   display.drawString(20, 20, String("GREEN Button"));
   display.drawString(20, 40, String("to continue."));
   display.display();
   delay(1000);
   // End Splash Screen //
+  */
   
   beep();
-  wait();
+  //wait();
 }
 
 void wait(){
@@ -150,4 +151,3 @@ void beep_off(){
   pinMode(_buzzer,OUTPUT);
   digitalWrite(_buzzer,LOW);
 }
-
