@@ -210,9 +210,9 @@ Blockly.Blocks['WIT_beep_delay'] = {
   init: function() {
     this.appendValueInput("_delay")
       .setCheck("Number")
-      .appendField("Buzzer Ond");
+      .appendField("Buzzer delay ");
     this.appendDummyInput()
-      .appendField("%");
+      .appendField("ms.");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
