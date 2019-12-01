@@ -248,4 +248,35 @@ Blockly.JavaScript['i2c128x64_display_height'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.JavaScript['led_green_on'] = function(block) {  
+  var code = 'botton.digitalWrite(P3, HIGH);\n';
+  return code;
+};
+
+Blockly.JavaScript['led_green_off'] = function(block) {  
+  var code = 'botton.digitalWrite(P3, LOW);\n';
+  return code;
+};
+
+Blockly.JavaScript['led_select_display'] = function(block) {
+  var value_color = block.getFieldValue('color');  
+  var value_status = block.getFieldValue('status');  
+  var v_color;
+  var v_status;
+  if(value_color == 'green')  v_color = 'P3';
+  if(value_color == 'yellow')  v_color = 'P4';
+  if(value_color == 'red')  v_color = 'P5';
+  if(value_color == 'blue')  v_color = 'P6';
+  if(value_color == 'rgb')  v_color = 'P7';
+  
+  if(value_status == 'on')  v_status = 'HIGH';
+  if(value_status == 'off')  v_status = 'LOW';
+  
+  //var code = 'botton.digitalWrite(${v_color}, ${v_status});\n';
+  var code = `
+botton.digitalWrite(${v_color},${v_status});
+`;
+
+  return code;
+};
 }
