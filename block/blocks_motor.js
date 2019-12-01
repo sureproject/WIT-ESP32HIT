@@ -28,7 +28,7 @@ Blockly.Blocks['WIT_servo'] = {
   init: function() {
     this.appendDummyInput()
       .appendField("set servo")
-      .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"]]), "ch");
+      .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"]]), "ch");
     this.appendValueInput("angle")
       .setCheck("Number")
       .appendField("degree");
