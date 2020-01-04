@@ -1,2 +1,3 @@
-#WiT-ESP32 (Home IT Maker Version)
+WiT-ESP32 (Home IT Maker Version)
+
 บอร์ดสำหรับการเรียนรู้การควบคุมหุ่นยนต์เบื้องต้น การทำโครงงาน หรือโปรเจคต่าง ๆ ด้วยแพลตฟอร์ม ESP32 รองรับการเชื่อมต่อ WiFi และ Bluetooth
