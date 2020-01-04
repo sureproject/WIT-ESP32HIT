@@ -9,5 +9,5 @@ module.exports = {
   email: "sector105@gmail.com",
   git : 'https://github.com/sureproject/WIT-ESP32HIT/',    
   image: "/static/display.jpg",
-  version: "1.0.0",
+  version: "1.0.1",
 };
