@@ -1,50 +1,31 @@
-module.exports = function(Blockly){
-  'use strict';
-var io_colour = Blockly.Msg.IO_HUE;  
-Blockly.Blocks['io_board_read'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("read input pin ")
-        .appendField(new Blockly.FieldDropdown([["PIN_0","25"], ["PIN_1","32"], ["PIN_2","33"]]), "pin");
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setColour(io_colour);
- this.setTooltip("read input pin");
- this.setHelpUrl("");
-  }
+module.exports = function(Blockly) {
+  "use strict";
+  Blockly.Blocks["adc_pin_dummy_input"] = {
+    init: function() {
+      
+      this.setOutput(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks["io_pin_dummy_input"] = {
+    init: function() {
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["BUILD IN LED (gpio2)", "2"],
+		  ["BUZZER (gpio14)", "14"],
+          ["SW1(gpio1)", "1"],
+		  ["SW2(gpio2)", "2"],
+          ["KNOB (gpio27)", "27"]
+          
+        ]), "IO_PIN");
+      this.setOutput(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
 };
 
-Blockly.Blocks['io_board_write'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("write output to pin ")        
-        .appendField(new Blockly.FieldDropdown([["PIN_0","25"], ["PIN_1","32"], ["PIN_2","33"]]), "pin")
-        .appendField(" value ")
-        .appendField(new Blockly.FieldDropdown([["HIGH","1"], ["LOW","0"]]), "value");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(io_colour);
- this.setTooltip("write output");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['io_board_write_value'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("write output to pin ")        
-        .appendField(new Blockly.FieldDropdown([["PIN_0","25"], ["PIN_1","32"], ["PIN_2","33"]]), "pin");
-    this.appendValueInput("value")
-        .setCheck("Number")
-        .appendField(" value ");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(io_colour);
- this.setTooltip("write output to pin");
- this.setHelpUrl("");
-  }
-};
-
-}

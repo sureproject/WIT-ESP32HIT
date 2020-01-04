@@ -11,63 +11,26 @@ Blockly.JavaScript['button_2_status'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-Blockly.JavaScript['sensor_1_analog'] = function(block) {  
-  var code = '(analogRead(35))';  
+Blockly.JavaScript['analog_sensor'] = function(block) {
+  var value_pin = block.getFieldValue('pin');
+  var code = `analogRead(${value_pin})`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-Blockly.JavaScript['sensor_2_analog'] = function(block) {  
-  var code = '(analogRead(34))';  
+
+Blockly.JavaScript['digital_sensor'] = function(block) {
+  var value_pin = block.getFieldValue('pin');
+  var code = `(analogRead(${value_pin})>500)?1:0`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-Blockly.JavaScript['sensor_3_analog'] = function(block) {  
-  var code = '(analogRead(39))';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
-Blockly.JavaScript['sensor_4_analog'] = function(block) {  
-  var code = '(analogRead(36))';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
-Blockly.JavaScript['sensor_5_analog'] = function(block) {  
-  var code = '(analogRead(12))';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_6_analog'] = function(block) {  
-  var code = '(analogRead(13))';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_1_digital'] = function(block) {  
-  var code = '(analogRead(35)==1023)?0:1';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_2_digital'] = function(block) {  
-  var code = '(analogRead(34)==1023)?0:1';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_3_digital'] = function(block) {  
-  var code = '(analogRead(39)==1023)?0:1';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_4_digital'] = function(block) {  
-  var code = '(analogRead(36)==1023)?0:1';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_5_digital'] = function(block) {  
-  var code = '(analogRead(12)==1023)?0:1';  
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['sensor_6_digital'] = function(block) {  
-  var code = '(analogRead(13)==1023)?0:1';  
+Blockly.JavaScript['TCS_read_rgb'] = function(block) {
+  var value_color = block.getFieldValue('color');  
+  var code = `
+TCS_Read(${value_color})
+`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 

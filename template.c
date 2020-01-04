@@ -1,5 +1,5 @@
 #include "WIT_ESP32HIT.h"
-/*BASE ON NKP_ONE by PrinceBot*/
+/*BASE ON IPST WiFI by INEX & NKP_ONE by PrinceBot*/
 
 ${EXTINC}
 
@@ -21,5 +21,4 @@ void loop()
 {
   ${LOOP_CODE}
   ${LOOP_EXT_CODE}
-
 }
